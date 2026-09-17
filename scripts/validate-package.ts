@@ -19,6 +19,5 @@ assert.deepEqual(p.pi.extensions, [
   './extensions/mlflow/index.ts',
 ]);
 for (const extension of p.pi.extensions as string[]) assert.ok(extension.endsWith('/index.ts'), 'manifest must list extension entry points, not internal modules');
-assert.ok(p.files.includes('CHANGELOG.md') && p.files.includes('docs'));
-await access(join(root, 'docs', 'verification.md'));
+assert.ok(p.files.includes('CHANGELOG.md') && !p.files.includes('docs'));
 console.log('Pi manifest, resource paths and external web dependency validated');

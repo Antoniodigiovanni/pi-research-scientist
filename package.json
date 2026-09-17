@@ -23,7 +23,6 @@
     "tests",
     "examples",
     "tsconfig.json",
-    "docs",
     "README.md",
     "CHANGELOG.md",
     "LICENSE"
