@@ -10,38 +10,41 @@ the research method. The project repository, not chat history, is durable memory
 Requires Node >=22.19 and current Pi. Development is pinned and tested against
 `@earendil-works/pi-coding-agent@0.85.1`; older `@mariozechner` releases are unsupported.
 
-From the supplied workspace:
+Clone the repository if needed, then install from its checkout root:
 
 ```sh
+git clone https://github.com/Antoniodigiovanni/pi-research-scientist.git
 cd pi-research-scientist
 npm ci --ignore-scripts
-cd ..
 pi install npm:pi-web-access
-pi install ./pi-research-scientist
+pi install .
+pi list
 ```
 
-Restart Pi or `/reload`. Review the source before trusting project packages. Pi's
+If you already have a checkout, start at `cd pi-research-scientist`. `pi list` should show
+this package and `pi-web-access`. Restart Pi or use `/reload` in an existing session.
+Review the source before trusting project packages. Pi's
 project trust controls loading, not runtime isolation. No model credentials are
 needed to run the default test suite or package loading smoke test.
 
 The npm name is reserved here only as package metadata: this package has **not** been
-published. Use the local install above. No postinstall or global configuration edits
-are performed by our package.
+published. Install it from a local checkout. The package does not edit global
+configuration files or run postinstall scripts.
 
 ## Start a project
 
 ```sh
-cd pi-research-scientist
 npm run init-project -- ../my-research internal "My research question"
 cd ../my-research
 pi
 ```
 
 Use `public` instead of `internal` for open-data projects. Edit `research.yaml` before
-connecting data services. The initializer refuses existing destinations, preserves
-existing global instructions and makes no service calls. Review and manually merge
-`templates/global/AGENTS.md` into `~/.pi/agent/AGENTS.md` if desired; keep a backup and
-resolve overlaps. Pi packages do not automatically install this global fragment.
+using private research sources. The initializer refuses existing destinations,
+preserves existing global instructions and makes no service calls. You may review
+and manually merge `templates/global/AGENTS.md` into
+`~/.pi/agent/AGENTS.md`; keep a backup and resolve overlaps. Pi packages do not
+automatically install this global fragment.
 
 The template's `.env.example` lists research discovery service names only. This
 package does not load `.env` files automatically.
