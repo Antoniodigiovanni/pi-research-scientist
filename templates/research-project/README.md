@@ -10,4 +10,4 @@ not automatically loaded; use your shell or an approved environment manager.
 if copying this template). Internal Zotero reads require raw-content approval; prefer
 a separate public project and library for public literature.
 
-Canonical records live in `literature/`, `docs/data/`, `experiments/`, and `paper/claims.md`. Notebooks are for exploration; reusable logic belongs in `src/`. Default tests must use synthetic or public fixtures.
+Canonical records live in `literature/`, `docs/data/`, `experiments/`, and `paper/claims.md`. Use pi-workflow for implementation, testing, data service access, and MLflow tracking when needed.

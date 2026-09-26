@@ -19,4 +19,4 @@ Create `experiments/<number>-<slug>/experiment.md` before running substantial wo
 
 Change as few independent dimensions as practical. Predeclare the primary comparison; label later exploratory analyses. Prefer the cheapest experiment that can change the decision. Link data assessment and leakage audit when the split, target, retrieval corpus, or preprocessing changes.
 
-Reserve fields for exact command, configuration, code revision, model/checkpoint, MLflow run IDs, metrics, artifacts, observations, interpretation, decision, and follow-up. A run is not reproducible if essential state lives only in a notebook or conversation.
+Reserve fields for exact command, configuration, code revision, model/checkpoint, run tracker IDs when used, metrics, artifacts, observations, interpretation, decision, and follow-up. Use pi-workflow's MLflow skill for tracking setup. A run is not reproducible if essential state lives only in a notebook or conversation.

@@ -10,7 +10,7 @@ const scratch = await mkdtemp(join(tmpdir(), 'pi-research-scientist-pack-'));
 try {
   const [pack] = JSON.parse(execFileSync('npm', ['pack', '--json', '--ignore-scripts', '--pack-destination', scratch, '--cache', join(scratch, 'cache')], { cwd: root, encoding: 'utf8' }));
   const paths = pack.files.map((file: {path: string}) => file.path) as string[];
-  for (const required of ['templates/research-project/gitignore.template', 'templates/research-project/.env.example', 'tsconfig.json', 'tests/audit.test.ts', 'scripts/init-project.ts']) assert.ok(paths.includes(required), `Missing packed file: ${required}`);
+  for (const required of ['templates/research-project/gitignore.template', 'templates/research-project/.env.example', 'tsconfig.json', 'tests/gates.test.ts', 'scripts/init-project.ts']) assert.ok(paths.includes(required), `Missing packed file: ${required}`);
   assert.ok(!paths.some(path => /(^|\/)node_modules\/|(^|\/)\.env$|\.tgz$/.test(path)));
   execFileSync('tar', ['-xzf', join(scratch, pack.filename), '-C', scratch]);
   const packed = join(scratch, 'package');

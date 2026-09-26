@@ -14,7 +14,6 @@ test('bootstrap creates both modes and never overwrites existing projects', asyn
       const p = await loadPolicy(target);
       assert.equal(p.project.type, mode);
       assert.equal(p.data_policy.public_release_allowed, mode === 'public');
-      assert.equal(p.databricks.row_access, false);
       const before = await readFile(join(target, 'AGENTS.md'), 'utf8');
       await assert.rejects(initializeProject(target, 'public', 'Overwrite'));
       assert.equal(await readFile(join(target, 'AGENTS.md'), 'utf8'), before);

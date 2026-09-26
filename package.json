@@ -31,9 +31,7 @@
     "extensions": [
       "./extensions/research-guardrails/index.ts",
       "./extensions/scholarly/index.ts",
-      "./extensions/zotero/index.ts",
-      "./extensions/databricks/index.ts",
-      "./extensions/mlflow/index.ts"
+      "./extensions/zotero/index.ts"
     ],
     "skills": [
       "./skills"

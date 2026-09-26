@@ -1,3 +1,3 @@
 # Notebooks
 
-Use notebooks for exploration and visualization. Import reusable logic from `src/`; results must not depend on hidden execution order or unrecorded state.
+Use notebooks to explore the research question and visualize evidence. Link durable observations and figures to the relevant experiment record. Use pi-workflow for reusable code structure.

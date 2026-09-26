@@ -171,11 +171,10 @@ test("doctor reports local availability and remote uncertainty without exposing 
 	});
 	const root = await mkdtemp(join(tmpdir(),"pi-research-scientist-doctor-"));
 	try {
-		const result = await doctor(root,[],{ZOTERO_LOCAL_API_URL:new URL("api/",mock.root).href,BETTER_BIBTEX_JSON_RPC_URL:new URL("better-bibtex/json-rpc",mock.root).href,DATABRICKS_TOKEN:"credential-sentinel",DATABRICKS_HOST:"https://workspace.example.com"});
+		const result = await doctor(root,[],{ZOTERO_LOCAL_API_URL:new URL("api/",mock.root).href,BETTER_BIBTEX_JSON_RPC_URL:new URL("better-bibtex/json-rpc",mock.root).href,OPENALEX_API_KEY:"credential-sentinel"});
 		assert.equal(result.zotero,"reachable");
 		assert.equal(result.better_bibtex,"reachable");
 		assert.match(result.policy!,/invalid/);
-		assert.match(result.databricks_host!,/not live verified/);
 		assert.match(result.web!,/missing/);
 		assert.doesNotMatch(JSON.stringify(result),/credential-sentinel/);
 	} finally { await mock.close(); await rm(root,{recursive:true,force:true}); }

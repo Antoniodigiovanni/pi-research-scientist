@@ -14,7 +14,6 @@ export async function initializeProject(destination: string, mode: 'public' | 'i
   doc.setIn(['project', 'type'], mode);
   doc.setIn(['data_policy', 'public_release_allowed'], mode === 'public');
   doc.setIn(['publication', 'external_release_allowed'], mode === 'public');
-  doc.setIn(['databricks', 'minimum_cohort_size'], mode === 'internal' ? 10 : 1);
   const config = doc.toString();
   parsePolicy(config);
   const target = resolve(destination);

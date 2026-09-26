@@ -42,8 +42,3 @@ export function loopbackUrl(value: string): URL {
   if (!['localhost', '127.0.0.1', '[::1]'].includes(url.hostname) || !['http:', 'https:'].includes(url.protocol) || url.username || url.password || url.search || url.hash) throw new Error('Local service endpoint must be a loopback HTTP URL without credentials');
   return url;
 }
-export function workspaceUrl(value: string): URL {
-  const url = new URL(value);
-  if (url.protocol !== 'https:' || url.username || url.password || url.search || url.hash || url.pathname !== '/') throw new Error('DATABRICKS_HOST must be an HTTPS workspace origin without credentials or paths');
-  return url;
-}

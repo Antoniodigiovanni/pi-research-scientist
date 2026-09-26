@@ -53,7 +53,6 @@ test('project template parses with secure internal defaults and complete durable
   assert.equal(policy.data_policy.allow_samples, false);
   assert.equal(policy.data_policy.allow_sensitive_values, false);
   assert.equal(policy.data_policy.public_release_allowed, false);
-  assert.equal(policy.databricks.row_access, false);
   assert.equal(policy.publication.external_release_allowed, false);
 
   const durableFiles = [
