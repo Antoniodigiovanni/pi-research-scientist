@@ -7,7 +7,7 @@ description: Conduct a traceable multi-source literature review and maintain the
 
 Read `research.yaml` and `docs/research-question.md`. Preserve intermediate evidence in `literature/search-log.md` and `literature/evidence-matrix.csv`; a synthesized web answer is only a lead.
 
-Before any external search in an internal project, remove company names, catalog/schema/table names, unreleased product details, confidential measurements, internal identifiers, and non-public hypotheses. Search a sanitized public formulation, or use only an externally approved query recorded in a decision. Project policy that allows metadata or aggregates is not permission to disclose it to a search provider. When safe sanitization would change the scientific meaning, stop external search and document the restricted search gap.
+Before any external search in an internal project, remove company names, internal data identifiers, unreleased product details, confidential measurements, internal identifiers, and non-public hypotheses. Search a sanitized public formulation, or use only an externally approved query recorded in a decision. Project policy that allows aggregates is not permission to disclose it to a search provider. When safe sanitization would change the scientific meaning, stop external search and document the restricted search gap.
 
 ## Search
 

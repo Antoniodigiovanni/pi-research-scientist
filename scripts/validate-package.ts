@@ -15,8 +15,6 @@ assert.deepEqual(p.pi.extensions, [
   './extensions/research-guardrails/index.ts',
   './extensions/scholarly/index.ts',
   './extensions/zotero/index.ts',
-  './extensions/databricks/index.ts',
-  './extensions/mlflow/index.ts',
 ]);
 for (const extension of p.pi.extensions as string[]) assert.ok(extension.endsWith('/index.ts'), 'manifest must list extension entry points, not internal modules');
 assert.ok(p.files.includes('CHANGELOG.md') && !p.files.includes('docs'));

@@ -1,3 +1,3 @@
 # Figures
 
-Store generated publication figures here. Keep source code and data/artifact lineage beside the relevant experiment or in `src/`; do not manually edit scientific values.
+Store generated publication figures here. Link each figure to its experiment record, source artifacts, and generation command; do not manually edit scientific values.

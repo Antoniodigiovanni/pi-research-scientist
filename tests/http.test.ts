@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createServer } from 'node:http';
-import { requestText, requestJson, loopbackUrl, workspaceUrl } from '../src/http.ts';
+import { requestText, requestJson, loopbackUrl } from '../src/http.ts';
 import { chunkText } from '../src/text.ts';
 test('bounded HTTP sanitizes errors, rejects redirects and enforces bytes', async () => {
   const server = createServer((req, res) => {
@@ -22,8 +22,6 @@ test('bounded HTTP sanitizes errors, rejects redirects and enforces bytes', asyn
 });
 test('URL policy and bounded chunks', () => {
   assert.throws(() => loopbackUrl('https://example.com'));
-  assert.throws(() => workspaceUrl('http://example.com'));
-  assert.throws(() => workspaceUrl('https://token@example.com'));
   assert.deepEqual(chunkText('abcdef', 2, 2), { text: 'cd', offset: 2, nextOffset: 4, totalCharacters: 6 });
   assert.throws(() => chunkText('a', 0, 20001));
 });

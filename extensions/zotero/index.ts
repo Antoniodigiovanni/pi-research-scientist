@@ -11,7 +11,6 @@ import { loadToolPolicy } from "../../src/policy.ts";
 
 async function checkPolicy(ctx: ExtensionContext): Promise<void> {
 	const policy = await loadToolPolicy(ctx);
-	if (!policy.data_policy.allow_schema_metadata) throw new Error("Zotero access is disabled by project metadata policy");
 	// Item/search/export responses may include private notes, annotations or abstracts.
 	// We cannot classify an entire desktop library automatically.
 	if (policy.project.type === "internal" && !policy.data_policy.raw_data_to_model) {
